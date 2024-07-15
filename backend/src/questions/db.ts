@@ -14,7 +14,9 @@ export const questions: Omit<Question, 'id'>[] = [
   {
     type: 'theory',
     question: 'Альтернативы web-sockets',
-    answer: 'Pooling - запросы через небольшой интервал времени. Long pooling - отправка запроса, который не завершиться пока не будет ответа. Event sourcing - запрос с хитрыми параметрами.',
+    answer: `<b>Polling</b> - запросы через небольшой интервал времени.</br>
+     <b>Long polling</b> - отправка запроса, который не завершиться пока не будет ответа.</br>
+     <b>Event sourcing</b> - запрос с хитрыми параметрами.`,
   },
   {
     type: 'js',

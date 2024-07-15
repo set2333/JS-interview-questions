@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { Card, Typography } from 'antd';
+import { Card } from 'antd';
 import { RootState } from '../../store';
 import { questionsApi } from '../../store/services/questions';
 
@@ -15,7 +15,7 @@ export const Question: FC = () => {
     <>
       {question && answer && (
         <Card title={question} style={{ width: '80%' }}>
-          <Typography.Text>{answer}</Typography.Text>
+          <div dangerouslySetInnerHTML={{ __html: answer }} />
         </Card>
       )}
     </>
