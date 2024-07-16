@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { SERVER } from '../../consts';
 
 type QuestionType = {
   id: string;
@@ -14,7 +15,7 @@ type Question = {
 
 export const questionsApi = createApi({
   reducerPath: 'questionsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/questions' }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${SERVER.PROTOCOL}://${SERVER.HOST}:${SERVER.PORT}/questions` }),
   endpoints: (builder) => ({
     getQuestions: builder.query<Question[], string>({ query: (type) => `?type=${type}` }),
     getQuestionTypes: builder.query<QuestionType[], string>({ query: () => 'types' }),

@@ -2,12 +2,12 @@
   "name": "js-interview-questions",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Evgeniy Trofimov",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "install": "concurrently \"npm i --prefix frontend\" \"npm i --prefix backend\"",
-    "dev": "concurrently \"wait-on http://localhost:5000/questions && npm run dev --prefix frontend\" \"npm run start:dev --prefix backend\""
+    "install-all": "npm i && concurrently \"npm i --prefix frontend\" \"npm i --prefix backend\"",
+    "dev": "concurrently \"wait-on http://localhost:$(grep PORT ./backend/.env.local | cut -d '=' -f2)/questions && npm run dev --prefix frontend\" \"npm run start:dev --prefix backend\""
   },
   "dependencies": {
     "concurrently": "^8.2.2",
