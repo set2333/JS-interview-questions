@@ -1,5 +1,13 @@
+export enum AvailableQuestionTypes {
+  CSS = 'css',
+  HTML = 'html',
+  JS = 'js',
+  REACT ='react',
+  THEORY = 'theory',
+}
+
 export type QuestionType = {
-  id: string;
+  id: AvailableQuestionTypes;
   label: string;
 }
 
