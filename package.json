@@ -6,11 +6,25 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "install-all": "npm i && concurrently \"npm i --prefix frontend\" \"npm i --prefix backend\"",
+    "install-all": "npm i && concurrently \"npm i --prefix frontend\" \"npm i --prefix backend\" && copy-files-from-to",
     "dev": "concurrently \"wait-on http://localhost:$(grep PORT ./backend/.env.local | cut -d '=' -f2)/questions && npm run dev --prefix frontend\" \"npm run start:dev --prefix backend\""
   },
   "dependencies": {
     "concurrently": "^8.2.2",
+    "copy-files-from-to": "^3.11.0",
     "wait-on": "^7.2.0"
+  },
+  "copyFiles": [
+    {
+      "from": "backend/.env.dist",
+      "to": "backend/.env.local"
+    },
+    {
+      "from": "frontend/.env.dist",
+      "to": "frontend/.env.local"
+    }
+  ],
+  "copyFilesSettings": {
+    "whenFileExists": "overwrite"
   }
 }
