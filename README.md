@@ -8,8 +8,7 @@ An application to help you prepare for JS interviews. Contains two applications:
 $ npm run install-all
 ```
 
-## Running the app
+## Running the app (development)
 
 ```bash
-# development
 $ npm run dev
