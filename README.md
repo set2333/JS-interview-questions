@@ -6,7 +6,6 @@ An application to help you prepare for JS interviews. Contains two applications:
 
 ```bash
 $ npm run install-all
-$ npm run prepare
 ```
 
 ## Running the app
