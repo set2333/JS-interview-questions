@@ -4,6 +4,7 @@ export enum AvailableQuestionTypes {
   JS = 'js',
   REACT ='react',
   THEORY = 'theory',
+  TS = 'ts',
 }
 
 export type QuestionType = {

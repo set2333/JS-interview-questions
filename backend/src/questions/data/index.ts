@@ -4,6 +4,7 @@ import { htmlQuestions } from "./html";
 import { jsQuestions } from "./js";
 import { reactQuestions } from "./react";
 import { theoryQuestions } from "./theory";
+import { tsQuestions } from "./ts";
 
 export const questions: Omit<Question, 'id'>[] = [
   ...cssQuestions,
@@ -11,12 +12,14 @@ export const questions: Omit<Question, 'id'>[] = [
   ...jsQuestions,
   ...reactQuestions,
   ...theoryQuestions,
+  ...tsQuestions,
 ];
 
 export const questionTypes: QuestionType[] = [
-  { id: AvailableQuestionTypes.HTML, label: 'Вопросы по HTML' },
-  { id: AvailableQuestionTypes.CSS, label: 'Вопросы по CSS' },
-  { id: AvailableQuestionTypes.JS, label: 'Вопросы по JS' },
-  { id: AvailableQuestionTypes.REACT, label: 'Вопросы по React' },
+  { id: AvailableQuestionTypes.HTML, label: 'HTML' },
+  { id: AvailableQuestionTypes.CSS, label: 'CSS' },
+  { id: AvailableQuestionTypes.JS, label: 'JS' },
+  { id: AvailableQuestionTypes.REACT, label: 'React' },
+  { id: AvailableQuestionTypes.TS, label: 'TypeScript' },
   { id: AvailableQuestionTypes.THEORY, label: 'Общие вопросы' },
 ];

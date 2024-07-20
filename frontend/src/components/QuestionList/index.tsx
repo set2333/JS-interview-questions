@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Menu } from 'antd';
+import { Divider, Menu } from 'antd';
 import type { MenuProps } from 'antd';
 import { questionsApi } from '../../store/services/questions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,17 +13,20 @@ export const QuestionList: FC = () => {
     (state: RootState) => state.currentQuestion.currentQuestionType
   );
   const { data } = questionsApi.useGetQuestionsQuery(currentQuestionType);
-  const items: MenuItem[] = data?.map(({ id, question }) => ({
-    key: id,
-    label: question,
-  })) || [];
+  const items: MenuItem[] =
+    data?.map(({ id, question }) => ({
+      key: id,
+      label: question,
+    })) || [];
 
   return (
     <Menu
       mode="vertical"
       items={items}
       style={{ width: '20%' }}
-      onClick={(event:  { key: string }) => dispatch(ACTIONS.setCurrentQuestion(event?.key))}
+      onClick={(event: { key: string }) =>
+        dispatch(ACTIONS.setCurrentQuestion(event?.key))
+      }
     />
   );
 };
