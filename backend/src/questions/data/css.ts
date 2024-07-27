@@ -1,10 +1,16 @@
-import { AvailableQuestionTypes, Question } from "src/types";
+import { AvailableQuestionTypes, Question } from "../../types";
 
 export const cssQuestions: Omit<Question, 'id'>[] = [
   {
     question: 'В чем отличие em и rem',
     answer: `<b>em</b> - размер относительно родительского размера. Например если у родителя размер шрифта 20px, а у потомка 0.8em, то его размер будет равен 16px.</br>
     <b>rem</b> - расчет размера такой же как и для em, но вместо родителя используется размер для тега <b>html</b>`,
+  },
+  {
+    question: 'В чем отличие Grid и Flexbox',
+    answer: `<b>Flexbox</b> разработан для макетов в одном измерении (строка или столбец).</br>
+    <b>Grid</b> это двухмерный макет (строки и столбцы одновременно).
+    `,
   },
   {
     question: 'Что такое БЭМ',

@@ -19,11 +19,11 @@ export class QuestionsService {
     this.questionTypes = questionTypes;
   }
 
-  getQuestionsByType(typeId: string): Question[] {
+  async getQuestionsByType(typeId: string): Promise<Question[]> {
     return this.questions.filter(({ type }) => type === typeId);
   }
 
-  getQuestionTypes(): QuestionType[] {
+  async getQuestionTypes(): Promise<QuestionType[]> {
     return this.questionTypes;
   }
 }

@@ -1,4 +1,4 @@
-import { AvailableQuestionTypes, Question } from "src/types";
+import { AvailableQuestionTypes, Question } from "../../types";
 
 export const htmlQuestions: Omit<Question, 'id'>[] = [
   {

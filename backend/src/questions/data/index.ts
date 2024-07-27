@@ -1,4 +1,4 @@
-import { AvailableQuestionTypes, Question, QuestionType } from "src/types";
+import { AvailableQuestionTypes, Question, QuestionType } from "../../types";
 import { cssQuestions } from "./css";
 import { htmlQuestions } from "./html";
 import { jsQuestions } from "./js";
