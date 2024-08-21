@@ -9,14 +9,18 @@ export class QuestionPgService {
   questionTypes: QuestionType[] = [];
 
   constructor() {
-    this.client = new Client({
-      user: process.env.PG_USER,
-      password: process.env.PG_PASSWORD,
-      database: process.env.PG_DB,
-      host: process.env.PG_HOST,
-      port: +process.env.PG_PORT,
-    });
-    this.client.connect();
+    const isUsedPg = process.env.USED_PROVIDER === 'pg';
+
+    if (isUsedPg) {
+      this.client = new Client({
+        user: process.env.PG_USER,
+        password: process.env.PG_PASSWORD,
+        database: process.env.PG_DB,
+        host: process.env.PG_HOST,
+        port: +process.env.PG_PORT,
+      });
+      this.client.connect();
+    }
   }
 
   async getQuestionsByType(typeId: string): Promise<Question[]> {
